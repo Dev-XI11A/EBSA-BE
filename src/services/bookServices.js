@@ -1,11 +1,15 @@
-const bookData = require('../docs/books.json')
 const bookUtils = require('../utils/booksUtils')
-const utils = require('../utils/utils')
-const fs = require('fs')
+
 const getAllBooks = ()=>{
     return bookUtils.list('src/docs/books.json')
 }
 
+const addBook =(req)=>{
+    let body = req.body
+    return bookUtils.add('src/docs/books.json',body)
+}
+
 module.exports={
-    getAllBooks
+    getAllBooks,
+    addBook
 }
