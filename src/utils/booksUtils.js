@@ -6,6 +6,12 @@ const list=(path)=>{
     return responseBuilder.successful(data)
 }
 
+const add=(path,body)=>{
+    let result = utils.writeFunction(path,body)
+    return responseBuilder.successful(result)
+}
+
 module.exports={
-    list
+    list,
+    add
 }
